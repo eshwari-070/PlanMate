@@ -1,53 +1,71 @@
-/* Minimal, clean styles for the Task Manager */
+/* PlanMate - Modern Productivity App */
 
 * {
   box-sizing: border-box;
 }
 
-html, body {
-  margin: 30px;
-  padding: 30px;
-  font-family: -apple-system, system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-  background: #f7f7f8;
-  color: #111111;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  background: linear-gradient(135deg, #F3E4D8, #EBD8CB);
+  color: #1f2937;
 }
+
+body {
+  min-height: 100vh;
+}
+
+/* Main App */
 
 .App {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 24px;
+  width: 90%;
+  max-width: 850px;
+  margin: 40px auto;
+  padding: 32px;
 }
 
+/* Header */
+
 header {
-  margin-bottom: 16px;
+  margin-bottom: 28px;
 }
 
 header h1 {
-  margin: 0 0 4px 0;
-  font-size: 28px;
+  margin: 0 0 8px;
+  font-size: 36px;
+  font-weight: 700;
+  color: #765C50;
 }
 
 header p {
   margin: 0;
-  color: #555;
+  color: #8F8178;
+  font-size: 15px;
 }
+
+/* Task Form */
 
 .task-form {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin: 16px 0;
+  gap: 12px;
+  margin: 20px 0;
 }
 
 #inp {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   flex: 1;
-  padding: 8px 10px;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  background: #ffffff;
+  min-width: 250px;
+  padding: 10px 14px;
+  border: 1px solid #E8D9CE;
+  border-radius: 12px;
+  background: #fffdf9;
+  box-shadow: 0 3px 10px rgba(79, 70, 229, 0.08);
 }
 
 #inp input {
@@ -56,82 +74,479 @@ header p {
   outline: 0;
   background: transparent;
   font-size: 14px;
+  color: #1f2937;
+}
+
+#inp input::placeholder {
+  color: #9ca3af;
 }
 
 #inp button {
   border: 0;
-  background: #111111;
+  background: #B98F7D;
   color: #ffffff;
-  padding: 8px 12px;
-  border-radius: 6px;
+  padding: 10px 16px;
+  border-radius: 9px;
   cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s ease;
 }
+
+#inp button:hover {
+  background: #9F7463;
+  transform: translateY(-1px);
+}
+
+/* Dropdowns */
 
 #btns {
   display: flex;
-  gap: 8px;
+  gap: 10px;
 }
 
 #btns select {
-  padding: 8px 10px;
-  border: 1px solid #e5e7eb;
-  border-radius: 6px;
+  padding: 10px 12px;
+  border: 1px solid #ddd6fe;
+  border-radius: 9px;
   background: #ffffff;
+  color: #374151;
+  cursor: pointer;
+  outline: none;
 }
+
+/* Task List */
 
 .task-list {
   list-style: none;
   padding: 0;
-  margin: 16px 0;
+  margin: 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .task-list li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 8px;
-  padding: 12px;
-  border: 1px solid #eeeeee;
-  border-radius: 8px;
-  background: #ffffff;
+  gap: 12px;
+  padding: 16px 18px;
+  border: 1px solid #E4D5CA;
+  border-radius: 14px;
+  background: #FFF9F4;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: 0.2s ease;
+}
+
+.task-list li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 18px rgba(139, 111, 97, 0.15);
 }
 
 .task-list li.completed {
   text-decoration: line-through;
-  opacity: 0.7;
+  opacity: 0.6;
 }
+
+/* Task Buttons */
 
 .task-list button {
-  background: none;
+  background: #E1E9DE;
   border: 0;
-  color: #047857;
+  color: #60705B;
   cursor: pointer;
-  padding: 6px 8px;
-  border-radius: 6px;
+  padding: 7px 10px;
+  border-radius: 8px;
+  transition: 0.2s ease;
 }
 
+.task-list button:hover {
+  background: #ddd6fe;
+}
+
+/* Progress Tracker */
+
 .progress-tracker {
-  margin-top: 16px;
+  margin-top: 24px;
+  padding: 18px;
+  border-radius: 14px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .progress-bar {
-  height: 8px;
-  background: #eeeeee;
+  height: 10px;
+  background: #e5e7eb;
   border-radius: 999px;
   overflow: hidden;
+  margin-top: 10px;
 }
 
 .progress {
   height: 100%;
-  background: #16a34a;
+  background: linear-gradient(90deg, #8FA58B, #A9BCA4);
+  border-radius: 999px;
+  transition: width 0.3s ease;
 }
 
+/* Clear Button */
+
 .clear-btn {
-  margin-top: 16px;
-  background: #dc2626;
+  margin-top: 18px;
+  background: #B98282;
   color: #ffffff;
   border: 0;
-  padding: 10px 14px;
-  border-radius: 6px;
+  padding: 10px 16px;
+  border-radius: 9px;
   cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.clear-btn:hover {
+  background: #A66C6C;
+  transform: translateY(-1px);
+}
+
+/* Mobile */
+
+@media (max-width: 650px) {
+  .App {
+    width: 94%;
+    padding: 20px;
+    margin: 20px auto;
+  }
+
+  header h1 {
+    font-size: 30px;
+  }
+
+  .task-form {
+    flex-direction: column;
+  }
+
+  #btns {
+    width: 100%;
+  }
+
+  #btns select {
+    flex: 1;
+  }
+
+  #inp {
+    width: 100%;
+  }
+}
+
+/* PlanMate: force the page and app into dark mode */
+
+body.dark-mode {
+  background: #2F2925 !important;
+  color: #F5EDE5;
+}
+
+body.dark-mode #root {
+  min-height: 100vh;
+  background: #2F2925;
+}
+
+body.dark-mode .App {
+  background: transparent;
+  color: #F5EDE5;
+}
+
+body.dark-mode .App header h1 {
+  color: #D5B6A5;
+}
+
+body.dark-mode .App header p {
+  color: #C6B7AB;
+}
+
+body.dark-mode .App #inp,
+body.dark-mode .App #btns select {
+  background: #3B332E;
+  border-color: #685447;
+  color: #F5EDE5;
+}
+
+body.dark-mode .App #inp input {
+  color: #F5EDE5;
+}
+
+body.dark-mode .App .task-list li,
+body.dark-mode .App .progress-tracker {
+  background: #3B332E;
+  border-color: #55473D;
+  color: #F5EDE5;
+}
+
+body.dark-mode .App .progress-bar {
+  background: #51463D;
+}
+
+body.dark-mode .App .progress {
+  background: linear-gradient(90deg, #8FA58B, #B0C4A8);
+}
+
+body.dark-mode .App .theme-toggle {
+  background: #4A3D35;
+  border-color: #685447;
+  color: #F5EDE5;
+}
+
+body.dark-mode .App .task-list button {
+  background: #465343;
+  color: #F5EDE5;
+}
+
+body.dark-mode .App .clear-btn {
+  background: #A66C6C;
+  color: #FFFFFF;
+}
+
+/* PlanMate Search */
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+  padding: 10px 14px;
+  background: #FFF9F4;
+  border: 1px solid #E4D5CA;
+  border-radius: 12px;
+}
+
+.search-box input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #5F554F;
+  font-size: 14px;
+}
+
+.clear-search {
+  border: none;
+  border-radius: 7px;
+  padding: 6px 10px;
+  background: #E8D9CE;
+  color: #765C50;
+  cursor: pointer;
+}
+
+.no-results {
+  padding: 16px;
+  color: #8F8178;
+  text-align: center;
+}
+
+/* Search in dark mode */
+
+body.dark-mode .search-box {
+  background: #3B332E;
+  border-color: #685447;
+}
+
+body.dark-mode .search-box input {
+  color: #F5EDE5;
+}
+
+body.dark-mode .search-box input::placeholder {
+  color: #BBAA9D;
+}
+
+body.dark-mode .clear-search {
+  background: #5A493F;
+  color: #F5EDE5;
+}
+
+body.dark-mode .no-results {
+  color: #C6B7AB;
+}
+
+/* PlanMate Edit Task */
+
+.task-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.edit-form {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.edit-form input,
+.edit-form select {
+  min-width: 0;
+  padding: 9px 10px;
+  border: 1px solid #E4D5CA;
+  border-radius: 8px;
+  background: #FFF9F4;
+  color: #5F554F;
+  font: inherit;
+}
+
+.edit-form input {
+  flex: 1;
+}
+
+.edit-form button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  background: #B98F7D;
+  color: white;
+  cursor: pointer;
+}
+
+.edit-form button:hover {
+  background: #9F7463;
+}
+
+/* Dark mode edit fields */
+
+body.dark-mode .edit-form input,
+body.dark-mode .edit-form select {
+  background: #3B332E;
+  border-color: #685447;
+  color: #F5EDE5;
+}
+
+body.dark-mode .edit-form button {
+  background: #806353;
+  color: #FFFFFF;
+}
+
+@media (max-width: 600px) {
+  .task-actions {
+    width: 100%;
+  }
+
+  .edit-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .edit-form input,
+  .edit-form select {
+    width: 100%;
+  }
+}
+
+/* PlanMate Task Filters */
+
+.task-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.task-filters button {
+  padding: 9px 14px;
+  border: 1px solid #E4D5CA;
+  border-radius: 10px;
+  background: #FFF9F4;
+  color: #765C50;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.task-filters button:hover {
+  background: #F3E4D8;
+}
+
+.task-filters button.active-filter {
+  background: #B98F7D;
+  border-color: #B98F7D;
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+/* Dark mode filters */
+
+body.dark-mode .task-filters button {
+  background: #3B332E;
+  border-color: #685447;
+  color: #F5EDE5;
+}
+
+body.dark-mode .task-filters button:hover {
+  background: #5A493F;
+}
+
+body.dark-mode .task-filters button.active-filter {
+  background: #806353;
+  border-color: #806353;
+  color: #FFFFFF;
+}
+
+@media (max-width: 500px) {
+  .task-filters {
+    gap: 7px;
+  }
+
+  .task-filters button {
+    flex: 1;
+    padding: 9px 8px;
+    font-size: 12px;
+  }
+}
+
+
+/* Success notification */
+.notification-toast {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 1000;
+  max-width: calc(100vw - 48px);
+  padding: 14px 22px;
+  border: 1px solid #C9D8C3;
+  border-radius: 12px;
+  background: #E8F0E4;
+  color: #52664D;
+  box-shadow: 0 6px 20px rgba(80, 70, 60, 0.15);
+  font-size: 14px;
+  font-weight: 600;
+  animation: notification-appear 0.25s ease-out;
+}
+
+body.dark-mode .notification-toast {
+  background: #3D4A39;
+  color: #E4F0DE;
+  border-color: #607458;
+}
+
+@keyframes notification-appear {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .notification-toast {
+    top: 12px;
+    right: 12px;
+    left: 12px;
+    max-width: none;
+    text-align: center;
+  }
 }

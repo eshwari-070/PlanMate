@@ -1,16 +1,95 @@
-# React + Vite
+# PlanMate — Your Smart Planning Companion
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+PlanMate is a task management web application built with React and Vite. It helps users organize their daily tasks, track progress, and manage their work through a clean, responsive interface.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Task Management:** Add, edit, delete, and complete tasks.
+- **Priority & Categories:** Organize tasks by priority and category.
+- **Search:** Find tasks quickly using the search bar.
+- **Task Filters:** View all, active, or completed tasks.
+- **Progress Tracking:** Monitor completed tasks and overall progress.
+- **Dark Mode:** Switch between light and dark themes.
+- **Success Notifications:** Receive feedback when tasks are added, updated, completed, or deleted.
+- **Local Storage:** Keep tasks saved in the browser across refreshes.
 
-## React Compiler
+## Technologies Used
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- JavaScript
+- HTML5
+- CSS3
+- Vite
+- Git and GitHub
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+
+Install [Node.js](https://nodejs.org/) and npm.
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/eshwari-070/PlanMate.git
+   ```
+
+2. Open the project folder:
+
+   ```bash
+   cd PlanMate
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+5. Open the local URL shown in your terminal.
+
+## Project Structure
+
+```text
+PlanMate/
+├── public/
+├── src/
+│   ├── Components/
+│   │   ├── Progresstracker.jsx
+│   │   ├── Taskform.jsx
+│   │   └── Tasklist.jsx
+│   ├── App.jsx
+│   ├── Style.css
+│   └── main.jsx
+├── index.html
+├── package.json
+└── vite.config.js
+```
+
+## Data Storage
+
+PlanMate uses browser local storage to retain tasks and the selected theme on the same browser.
+
+## Future Improvements
+
+- Task reminders
+- Cloud synchronization
+- User authentication
+
+## Author
+
+**Eshwari H N**
+
+GitHub: [eshwari-070](https://github.com/eshwari-070)
+
+---
+
+*PlanMate — Plan better. Stay organized. Make progress.*
