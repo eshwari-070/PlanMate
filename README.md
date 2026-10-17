@@ -93,3 +93,15 @@ GitHub: [eshwari-070](https://github.com/eshwari-070)
 ---
 
 *PlanMate — Plan better. Stay organized. Make progress.*
+
+
+## Screenshots
+
+### Main Dashboard
+![PlanMate Dashboard](screenshots/dashboard.png)
+
+### Task Management
+![PlanMate Task Management](screenshots/task-management.png)
+
+### Dark Mode
+![PlanMate Dark Mode](screenshots/dark-mode.png)
